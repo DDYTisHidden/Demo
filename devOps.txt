@@ -23,6 +23,7 @@ Last MilStone mentioned container orchestration as heading however but had the s
 CWoD AWS - open source Task orchestrator and schedular  
 Came across some new errors never seen before , I can share site link and screenshots of the console and addBootstrapPhotoGallery(images) .
 Images not visible on the adventure details page
+Kindly ignore the sprintName ME and module details given above . I just want to attempt the ME concerning Xflix backend & xboard
 xflix backend 
 xboard 
 $$$
@@ -630,10 +631,6 @@ scalable
 shared library 
 OS independence 
 
-docker is that virualization technology(true) which helps in providing that necessarry insulation in order to establish an effective microservice architecture required for facilitating 
-to various services required for operating a given application . Thus it becomes safe to say that these individual services operate completely independent of each other plus it assures a sense of developer-firendliness since once a developer  
-has the details mentioned in the Dockerfile he/she can ship this app to some other developer's end device it has this certainity that it will run the say as it did in case of the previous developer . So that there's no excuse for one to say that IT WORKS ON 
-MY MACHINE .you can run that service as an independent container inside    You have plenty of Docker theory material down below hit ctrl+F 
 
 docker-runtime(engine vs daemon) facilitates communication with Host OS(kernel?) by means of Namespaces(provide virualization) , Cgroups(system management )  and storage networking  
 the runtime refers to the component 
@@ -1788,6 +1785,15 @@ dependency management
 scalable 
 shared library 
 OS independence 
+
+CONTAINER REPO vs CONTIANER REGISTORY
+while prior can be publically or privately owned the latter is usually owned by a proper organization like dockerhub or AWS(EKS) 
+prior is a collection of container images whereas latter is a collection of repositories 
+
+docker is that virualization technology(true) which helps in providing that necessarry insulation in order to establish an effective microservice architecture required for facilitating 
+to various services required for operating a given application . Thus it becomes safe to say that these individual services operate completely independent of each other plus it assures a sense of developer-firendliness since once a developer  
+has the details mentioned in the Dockerfile he/she can ship this app to some other developer's end device it has this certainity that it will run the say as it did in case of the previous developer . So that there's no excuse for one to say that IT WORKS ON 
+MY MACHINE .you can run that service as an independent container inside    You have plenty of Docker theory material down below hit ctrl+F 
 
 
 docker-runtime(engine vs daemon) facilitates communication with Host OS(kernel?) by means of Namespaces(provide virualization) , Cgroups(system management )  and storage networking  
