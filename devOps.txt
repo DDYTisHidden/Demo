@@ -16,7 +16,7 @@ driver.close() vs driver.quite()
 How to secure Jenkins
 Adhock ?
 Can you write the syntex for building a docker image
-
+    
 									PROJECT
 $$$
 Last MilStone mentioned container orchestration as heading however but had the same content as Overview given before the first milestone . Was expecting some content concerning K8s or Docker Swarm at least . 
