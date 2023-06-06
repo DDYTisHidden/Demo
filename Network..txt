@@ -1,0 +1,848 @@
+ Routing and Switching, Collaboration, Data Center, Wireless, Security, Cloud based support
+what is a router?
+define network?
+what is a protocol?
+what affects the performance of a network?
+OSI layers
+network support layers
+user support layers
+what is multiplexing?
+what do you mean by the terms half-duplex and full-duplex in networking?
+what do you mean by Bluetooth?
+what is an IP address?
+what is a firewall?
+what is Telnet?
+what is http and https?
+what does www mean?
+can you name the various networking topology?
+which topology is used in your college campus?
+apti c,c++,java,OS(LINUX),Networking (RnS)->IP,routing protocols(basic ones AIGRP,static,dynamic,Device Configuration(Switches,routers),SSH/Telnet
+
+Coding topics :Strings(palindr,permutation),circular-LL,sorting(simple,count,insertion),Recursion,Backtracking,DP(combinational),mathematical,heap(kth>>in a stream),EulerTotient
+Function,Does array represent a heap,shortest path1->n,
+
+In the most basic form two computers connected to one another with a LAN cable and connectors(RJ45)sharing data by means of network interface 
+cards ; forms a computer network.But what if one PC has windows OS and the other has MAC OS 
+-------------------------------------------------------------S      Y      L      L      A       B        U      S----------------------------------------------------------------------------------
+OSI model's 7 layers'(To allow two computers to share date between them in a computer network) basic functionality in gatesmashers 1st v desc.
+(1)Physical-Cables(types :v in GATEsmashers 1 desc=d),Topoplogies,Transmission modes,Encoding(menchester some),LAN(wirelss)WAN MAN,
+devices(hard&Soft look above d 4 this one too),Modulation as a whole this layer is important for UGCNET w.r.t theory no numericals
+(2)Data link:stop&wait,go back & selelctive repeat(before & after , basic but 4 ugcnet NOT GATE),MAC protocols(Pure& slotated alloha CMCD ether
+-net),error control(checksum,crc,periti),ethernet framework(header of all protocols , ethernet frame format IEEE802.3)
+(3)Network(basic q) : ip addressing(class full,class less),routing protocols(link striaght distance straight routing)IPV4 header,IPV6 header
+(4)Transport:TCP,UDP,header and their port numbers that's it 
+(5)Session(6)Presentation(7)Application(DNS,HTTP,SMTP,FTP & port no. of each ) > all these three only fullforms and their purpose
+(8)Network (public key,private key,assymetric & and symetric key,RSA): also video in description
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+OSI model is a reference model which designed to show how applications communicate in a network.
+Reasons why this model came into existence :This 7 layered OSI model was introduced in 1984to accomplish a successful communication b/t computers/networks 
+of different architecture.Each of these layers is a package of protocols.Application does!have any concerns with computer applications like Chrome
+Firefox.Instead it has a set of protocols(HTTPandHTTPs) which enable these app(s) to work correctly in a network/internet.  
+to allow differnt types of nework hardware and software to communicatewith each other 
+Avoid  
+duplication of equipment resources ;
+ inability to communicate efficiently 
+to break network commmunication into smaller , simpler parts that are easy to develop 
+to facilitate standardization of network 
+Router : works with network address not with IP address i.e. network layer
+Switch : data link layer
+data cable hub : Physical layer
+1>Application layer allow access to network resources and applications which require net(Chrome,Outlook,Skype,router, web server , file server or 
+database server).All these applications do not reside in the App. Layer but use its application protocols to function(HTPP,HTTPs) and to do web 
+surfing These protocols allow the basis of network services like file transfer(FTP) , web surfing(HTTP/S), emails(SMTP) ,virtual Terminals(Telnet)
+ etc at Server's end encyption and compress protocols 
+(i) FTP (iv)HTTPS(vi)DHCP(ix)TELNET
+(ii)SNMP(v)NFS(vii)NNTP(x)FMTP
+(iii)HTTP (vi)IRC(viii)POP3
+plus  look for these network protocols
+HTTP, FTP, IMAP, POP3, SCP, SFTP, SMTP, TFTP, TELNET, LDAP, or FILE
+2>Presentation layer: Recieves data from the application layer which is in the format of characters and numbers.This layer converts this data into a
+mahcine understandable format i.e. binary form(i.e.1>Translation ex-ASCII->EBCDIC).Before the data is transfered P layer reduces the no. of bits used
+2 represent the original data(or 2>Data compression which is either lossy/lossless).This layer reduces the the size occupied by the file thereby facilitating
+its faster transfer(data transmission) to the destination.However in order to maintain the integrity of the data , before its transmission , P layer 
+performs 3>encyption .This enhances the security of sensitive data.That is to say that at the sender's side the data is encrypted and at the reveiver's 
+side , 3>decrypted.Both of these operations are carried out by Secure Sockets Layer protocol in this layer.
+3>Session Layer: This layer helps the set-up&management of the connection enabling sending and receiving of data; followed by the termination 
+of the connnections(sessions).For this the session layer adopts the usage of APIs(ex-Network Basic Input Output System)which allows applications
+on different 
+computers to communicate with one other.Before a session or connection of a server with a machine,the server performs 1>authentication
+by asking 4 username and password.Once the correct password and username is entered a session gets established b/t ur computer and server.Post
+authenticating the user, 2>autherization is performed to determine if the user has permission to access some file.if ! error msg u r ! authorized.This 
+layer keeps a track of the files being dowloaded.These files are received as data packets.The S layer keeps a track of these packets as to know which
+packet belongs to .txt category and which to the .img category.These text files and img files are stored as seperate files on the web server.On being
+requested the web server establishes a seperate session for this purpose so that they can be downloaded seperately depending on their file format
+/extention because as mentioned before the data received as  packets are dowloaded either as text file or image file.These packets are tracked for
+their destination which is browser in this casei.e.this layer accounts for 3>session management .
+The browser accounts for the functions performed by the Sess,Pre&Appl.  
+Transport layer:controls the reliability of the network by the following measures :
+Segmentation :The data from the session layer is divided into smaller data units(segments) each with a source&destination's port no(To direct each of these seg
+-ments to the correct applications.And a sequence no.(for re-assembling the segments into the correct order 4 constiuting a corr. msg at the reveiver
+-'s end
+Flow Control:This is for controlling the amount of data being transmitted.4 instance consider a smartphone connected 2 a server which can transmit
+data at max of 100mbps while the mobile can process it max at 10mps.Therefore, if a case arises when the mobile starts downloading data from 
+the server which sends it at 50mbs then the phone can use the transport layer to tell the server to decrease the data transmission rate.Vice versa 
+is possible too
+Error C:The role of this layer comes into play when some data(singular datum)does not arrive at the destination.Then the transport layer uses the 
+Automatic Repeat Request scheme to re-transmit the lost/corrupted data.A group of bits(checksum) is added to each segment by the transport lyer
+to check for the received corrupted segment.T layer is represented by two protocols :
+Transmission control protocol(TCP 4 Connection-oriented Transmission service which is fast because no feedback is delivered4 data-delivery.Its 
+responsibility is to ensure that 100%data is delivered to the destination without any corruption.ex-
+UDatagramProtocol - online movie streaming,music,online video games,voice over,IP,TFTP,DNS where NEITHERcomplete data delivery is important
+nor the acknowledgement of data delivery is significant as it doesn't guarantee ordered delivery of data and is suitable for unidirectional flow of 
+data.Plus the server does not need to hold session details being stateless->there is no fastened dependency b/t server&client. ' . simple more simple design
+with faster transaction.Also since there is no need to restore the session. ' . failures are dealt more effectivelycause just a re-start is required.No congestion 
+control)
+DHCP allocates(automatic,dynamic||manual)Ip allocation to the KNOWN IP subnet's hosts.
+upon receiving the response the modem/router decides which end device made the request by means of NetworkAcessTranslation 
+within that user's device to figure out which particular application made the request ; ports are used specifically HTTP(80)0to 1023 reserved ports 
+1024-49152 applications left ones from 65000 can be used.
+User datagram(A self-contained message unit whihc contains sufficient)protocol(4Connectionless Transmission service slow because it provides 
+feedback for the probably lost data in TCP so that it can be re-transmitted.Here complete data-delivery is must.Ex-www,email,FTP) 
+from the source if the frame is transmitted three cases arise : (i) frame arrived along with acknowledgement
+						(ii) frame dropped
+		(iii) frame arrived without acknowledgement therefore cosidered as dropped
+Network Layer:The segments transfered by the tranport layer which accounts for the transmission of the data between computer located on different
+networks.However here the data units R referred to as packets&this is the layer where routers reside.Following are its func(s)LAdd,Rout,PathDeter:
+(1)IP addressing done in the network layer is referred to as LAdd.Every device has a uniques IP add in a network.The N layer assigns sender's&re
+-ceiver's ip address to each segment to form an ip packet.These ipadd. R assigned to ensure that each packet receives its correct destination
+(2)It is the process of transfering data packets form source2destination with respect2 the logical address of the format(IPv4&IPv6+Mask).
+Suppose a A and B r 2 devices connected 2 2 different networks.When A communicates with the server of FB(2 access it)then the reply from its 
+server is in the form a packet which has the sender's and receiver's ipadd i.e. of the device A.Suppose if mask is 255.255.255.0. then the first 3 comb
+represents the network while the rest represents the host.Since the ipadd r unique ,the received data packet is transmitted first to the network followed
+by the host device.
+(3)Path Determination:The mechanism of determining the best possible path for data delivery between a computer(source)&a server(|| other 
+computer(s)destination)is called PD.This is cause a computer can be connected to a server in a no. of different ways.Layer 3 devices use following 
+protocols 2 serve this purpose :
+$OpenShortestPathFirst
+$BorderGatewayProtocol
+$IntermediateSystem2IntermediateSystem
+
+Data Link L:It receives packets from the Network layer.These packets contain ip addresses of the sender and reciever.LogicalAdd. is done in the 
+network layer where sender's and receiver's ipadd are assigned2the segment constiuting a data packet.In the DataL layer PhysicalAdderessing is 
+done where MACadd(sender's&receiver's,router) are assigned to each packet(which is a twelve digit hexadecimal,alphanumeric no. embedded in Network Interface 
+Card by our computer manufacturer )constituing a frame.Data unit in DataLink L is called a frame.This layer itself is embedded as software in 
+our NI card.These frames serve as a medium 4 transmitting data from one computer 2 the other via a local media.Local media includes Cu wire,
+Optical fibre||air4radio signals.Media refers2 the physical linksb/t2||>devices/networks.1stFunc to permit the above layer2access media by techniqs
+like framing.2ndFunc 2 control how data is fetched/received from media and how it is placed by means of MediaAccessControl and ErrorDetection
+Consider two hosts(laptop&Desktop) in different networks communicating with each other.Being on N1&N2 netwo. ' .they will be N layer protocols
+IP 4 instance 4 communicating with one other.Consider the desktop connected2 router1 via ethernetCable->R12R2 via a sattellite link&R2connected
+2 laptop via a wireless link.If Desktop wishes2share some data2Laptop;depending on the medium used2connect it with R1,the DL layer assigns some 
+additional data to the head&tail of the ipPacket converting it2a data-frame.R1 receives this ethernetFrame,de-capsulates it into an ip packet&re-ca
+-psualtes it back into a data-frame4 transmitting it accross the satellite link.R2 de-capsulates the frame followed by its de-capsualtion2form a wire
+-less data-link frame.This WLDL frame is de-capsulated by the laptop and forwards it to the NLayer.Finally the data unit arrives the AppLicayer
+which uses protocols2makes the received data visible on laptop's screenI.E.the Network layer||higher level layer are able2transfer data over media
+with the help of DLLayer;this is what it means when it is said that DLL layer allows access2media4 higher level layer of the OSI model.The techn
+-ique used to get a frame on and off the media(LanCable,Opticalfiber,Air) is referred2as mediaAccessControl.If various devices are connected to the 
+same media&they send data at the same time then there mayba possibility that it can lead2msgCollision producing a useless msg which can't b 
+understood by any of the recipient.2avoid this the DLL keeps an eye on when the sharing media is free so that device can transmit data to the 
+recevier->calledCarrierSendsMultipleAccess.That is DLL uses MediaAccessControl to monitor data transmission.Tail of each frame contains bits(4E
+rrorDetection)in the received frame.These errors can arise due2certain limitation of the media used4DataTransmission.
+segment=Data(Transport)<Packet=(Source+DestinIP)+segment(Network)<Frame=(Source+DestiMAC)+Packet+FCS(DL)which is a seq.of 0s&1s
+PhysicalL:This layer converts these binary sequence into signals&transmit it over local media which can be an electric signal in case of Cu/LAN
+cable,Light signal in case of Optical fibre||radio signal in case of air.This implies that the signal produced by theP-Layer depends upon the kind of
+medium used2connect2devices.At the receiver's end the P-Layer receives signals->convert it in2 bits and pass it to the DLlayer as a frame.This frame
+further gets decapsulated as data shifts across higher layer.Finally data moves to the AppLayer whose protocols makes the contents of the sender's 
+message visible on the application of the receiver's computer screen.This is how OSI model helps in transferring data between 2||< hosts on different
+networks.
+The distance vector routing we assume that each router knows the identity of every other router in the network.But the shortest path to each orouter
+is not knownA distance vector is defined as the list of destination,cost touples,one touple per destination.Each router mainains a distance vector
+the cost in each touple is equal is to the sum of costs on the shortest path to the destination.
+Updation of Router tables 
+1>A router periodically sends a copy of its distance vector to all its neighbours
+2>When a router receives a distance vector form its neighbour ,it determines whether its cost to reach any destination could decrease if it routes
+packets to the destinations through that neighbour.
+3>A single takes place at all other routers as well   
+the problem with distance vector its slowness in converging to the correct answer.This is due ot the found to infinity problem.It can be solved by 
+split Horizon Problem.
+Split Horizon algo : int this algo the minimum cost to a given destination is not sent through a neighbour if the neighbour is the next node along 
+the shortest path.4ex- if node a thinks that the best route to node b is via node c then node a should not sent the corresponding minimum cost to node
+C 
+to avoid the count to infinity problem but only 
+this algo does not take the line bandwidth into consideration while choosing route.This serious problem lead to its replacement by 
+Top to infinity pro
+the distance vetor routing works properly theoritically but not practically .It produces a correct result but slowly
+it reacts quickly to good news but if a router goes down it reacts very slowly(i.e. works fast only when router is up)
+Consider a linear subnet which has five nodes the delay matrix used is the no. of hops.Assume that a 
+each router should discover and obtain each others network addresses of the neighbouring routers
+the delay or cost of these neighbours measure round-trip delay of Hello packet and its reply 
+it should construct a packet containing the network address and the delays of all these neighbours 
+lastly compute the shortest path to each router 
+the complete topology and all the details are experimentally measured and this information is conveyed to each and every router 
+then a shortest path algo(DJkruskal's algo/code ))can be used to every 
+the open shourtest first protocol(OSPF) which is used in Internet uses linked 
+IS-IS intermediate system-" same" is the other protocol which uses linked state protocol.it is used in internet 
+comparison between linked state routeing and distance vector routing :
+distance vector routing 
+each router contains routing table,index,and contianing one entry for each router 
+algo takes too long to converge                                                                          link state converging fast
+                                                                                                                       band width is available
+each router measure delay directly with special eco packets                                 all delays measured&destributed 
+it considers 
+Hierarchical routing
+as the size of the network incresaess the size o fthe routing table also increases as a result of large routing table , a large routing memory is consumed
+most cpu time is needed to scanning the table
+in broadcasting a host sends packets to many/all other hosts of the network
+
+While switches are used to connect devices on a LAN and exchange data frames, routers are needed to reach devices that are not on the same LAN. Routers use routing tables to route trafﬁc between different networks. Routers are attached to different networks (or subnets) through their interfaces and have the ability to route the data trafﬁc between them.
+
+Routers have the following functions:
+
+They operate at the internet layer of TCP/IP model and Layer 3 network layer of the OSI model.
+They route packets between networks based on entries in the routing table.
+Listen 4 subnet information from other routers(sent from router2router)
+Provide subnet information 2 other routers(i.e. sharing all the subnet infomationto2other routers)
+Path Determination and also updating the available routes in case of any changes seen in the network
+They have support for a large variety of network ports, including various LAN and WAN media ports which may be copper or fiber. The number of interfaces on routers is usually much smaller than switches but the
+variety of interfaces supported is greater. IP addresses are configured on the interfaces.
+
+Recall that the functions of a router are path determination and packet forwarding. There are three packet-forwarding mechanisms supported by routers:
+
+since now pachets are being forwarded 4 the packet needs to encapsulated  before sending it 2 the sender's router4 which mac address was required(possibly of the receiver's switch).This is reading material however
+if a router needs to send an address resolution protocol for an ipv4 address in one of its route entries then it implies that the packet shall b forwarded 2 the next-hop router
+while if the same router sends an ARP 4 the destination ipv4 address then it implies that it shall be forwarded to that host which has this ipv4 address.
+
+Process switching - When a packet arrives on an interface, it is forwarded to the control plane where the CPU matches the destination address with an entry in its routing table, and then determines the exit interface 
+and forwards the packet. The router does this for every packet, even if the destination is the same for a stream of packets. This process-switching mechanism is very slow and is rarely implemented in modern networks.
+An older packet forwarding mechanism still available for Cisco routers. When a packet arrives on an interface, it is forwarded to the control plane where the CPU matches the destination address with an entry in its routing table, and then determines the exit interface(may be the egress interface)and forwards the packet. It is important to understand that the router does this for every packet, even if the destination is the same for a stream of packets. This process-switching mechanism is very slow and is rarely implemented in modern networks. Contrast this with fast switching.
+Contrast this with fast switching.
+
+Fast switching - Fast switching uses a fast-switching cache to store next-hop information. When a packet arrives on an interface, it is forwarded to the control plane where the CPU searches for a match in the 
+fast-switching cache. If it is not there, it is process-switched and forwarded to the exit interface. The flow information for the packet is also stored in the fast-switching cache. If another packet going to the same 
+destination arrives on an interface, the next-hop information in the cache is re-used without CPU intervention.
+Cisco Express Forwarding (CEF) - CEF is the most recent and default Cisco IOS packet-forwarding mechanism. Like fast switching, CEF builds a Forwarding Information Base (FIB), and an adjacency table. However, 
+the table entries are not packet-triggered like fast switching but change-triggered, such as when something changes in the network topology. Therefore, when a network has converged, the FIB and adjacency tables
+contain all the information that a router would have to consider when forwarding a packet. Cisco Express Forwarding is the fastest forwarding mechanism and the default on Cisco routers and multilayer switches.
+A common analogy used to describe these three different packet-forwarding mechanisms is as follows:
+
+Process switching solves a problem by doing math long hand, even if it is the identical problem that was just solved.
+Fast switching solves a problem by doing math long hand one time and remembering the answer for subsequent identical problems.
+CEF solves every possible problem ahead of time in a spreadsheet.
+
+A routing table may contain the following types of entries:
+
+Directly connected networks - These network route entries are active router interfaces. Routers add a directly connected route when an interface is configured with an IP address and is activated. Each router interface 
+is connected to a																																																																																																																																																																																																																														 different network segment.
+Directly connected networks are networks that are configured on the active interfaces of a router. A directly connected network is added to the routing table when an interface is configured with an IP address and subnet mask (prefix length) and is active (up and up).
+If the route entry indicates that the egress interface is a directly connected network, this means that the destination IP address of the packet belongs to a device on the directly connected network. Therefore, the packet can be forwarded directly to the destination device. The destination device is typically an end device on an Ethernet LAN, which means the packet must be encapsulated in an Ethernet frame.
+
+To encapsulate the packet in the Ethernet frame, the router needs to determine the destination MAC address associated with the destination IP address of the packet. The process varies based on whether the packet is an IPv4 or IPv6 packet:
+IPv4 packet - The router checks its ARP table for the destination IPv4 address and an associated Ethernet MAC address. If there is no match, the router sends an ARP Request. The destination device will return an ARP Reply with its MAC address. The router can now forward the IPv4 packet in an Ethernet frame with the proper destination MAC address.
+IPv6 packet - The router checks its neighbor cache for the destination IPv6 address and an associated Ethernet MAC address. If there is no match, the router sends an ICMPv6 Neighbor Solicitation (NS) message. The destination device will return an ICMPv6 Neighbor Advertisement (NA) message with its MAC address. The router can now forward the IPv6 packet in an Ethernet frame with the proper destination MAC address.
+
+
+Remote networks are networks that are not directly connected to the router. Routers learn about remote networks in two ways:
+If the route entry indicates that the destination IP address is on a remote network, this means the destination IP address of the packet belongs to a device on network that is not directly connected. Therefore, the packet must be forwarded to another router, specifically a next-hop router. The next-hop address is indicated in the route entry.
+
+If the forwarding router and the next-hop router are on an Ethernet network, a similar process (ARP and ICMPv6 Neighbor Discovery) will occur for determining the destination MAC address of the packet as described previously. The difference is that the router will search for the IP address of the next-hop router in its ARP table or neighbor cache, instead of the destination IP address of the packet.
+
+Note: This process will vary for other types of Layer 2 networks.
+Drops the Packet - No Match in Routing Table
+
+If there is no match between the destination IP address and a prefix in the routing table, and if there is no default route, the packet will be dropped.
+
+
+Static routes - Added to the routing table when a route is manually configured.
+Static routes - These are routes that are manually configured by the network administrator. Static routes work relatively well for small networks that do not change in time, but in large dynamic networks they have 
+many shortcomings.
+Static and dynamic routing are not mutually exclusive. Rather, most networks use a combination of dynamic routing protocols and static routes.
+
+Static Routes
+
+Static routes are commonly used in the following scenarios:
+
+As a default route forwarding packets to a service provider
+For routes outside the routing domain and not learned by the dynamic routing protocol
+When the network administrator wants to explicitly define the path for a specific network
+For routing between stub networks
+Static routes are useful for smaller networks with only one path to an outside network. They also provide security in a larger network for certain types of traffic, or links to other networks that need more control.
+
+Routing protocols determine the best path, or route, to each network. That route is then offered to the routing table. The route will be installed in the routing table if there is not another routing source with a lower AD. A primary benefit of dynamic routing protocols is that routers exchange routing information when there is a topology change. This exchange allows routers to automatically learn about new networks and to find alternate paths when there is a link failure to a current network.
+A routing protocol is a set of processes, algorithms, and messages that are used to exchange routing information and populate the routing table with the choice of best paths. The purpose of dynamic routing protocols includes the following:
+
+Discovery of remote networks
+Maintaining up-to-date routing information
+Choosing the best path to destination networks
+Ability to find a new best path if the current path is no longer available
+The main components of dynamic routing protocols include the following:
+
+Data structures - Routing protocols typically use tables or databases for their operations. This information is kept in RAM.
+Routing protocol messages - Routing protocols use various types of messages to discover neighboring routers, exchange routing information, and other tasks to learn and maintain accurate information about the network.
+Algorithm - An algorithm is a finite list of steps used to accomplish a task. Routing protocols use algorithms for facilitating routing information and for the best path determination.
+Routing protocols allow routers to dynamically share information about remote networks and automatically offer this information to their own routing tables. Click Play to see an animation of this process.
+
+Dynamic routing protocols help the network administrator manage the time-consuming and exacting process of configuring and maintaining static routes. Dynamic routing protocols are implemented in any type of network consisting of more than just a few routers. Dynamic routing protocols are scalable and automatically determine better routes if there is a change in the topology.
+
+Dynamic routing protocols are commonly used in the following scenarios:
+
+In networks consisting of more than just a few routers
+When a change in the network topology requires the network to automatically determine another path
+For scalability. As the network grows, the dynamic routing protocol automatically learns about any new networks
+Dynamic routing protocols - Added to the routing table when routing protocols dynamically learn about the remote network. Dynamic routing protocols include Enhanced Interior Gateway Routing Protocol (EIGRP), Open Shortest Path First (OSPF), as well as several others.
+Dynamic routes - These are routes learned automatically when a dynamic routing protocol is configured and a neighbor relationship to other routers is established. The reachability information in this case is 
+dynamically updated when a change in the network occurs. Several routing protocols with different advantages and shortcomings have been developed through the years. Routing protocols are extensively used 
+throughout networks deployed all over the world. Examples of routing protocols include 
+
+
+OSPF, EIGRP, IS-IS, and BGP.
+
+The table shows a comparison of some the differences between dynamic and static routing.
+
+Feature	                                         Dynamic Routing						Static Routing
+Configuration complexity	          Independent of network size					Increases with network size
+Topology changes	                           Automatically adapts to topology changes				Administrator intervention required
+Scalability	                                           Suitable for simple to complex network topologies				Suitable for simple topologies
+Security	                                         Security must be configured					Security is inherent
+Resource Usage	                        Uses CPU, memory, and link bandwidth				No additional resources needed
+Path Predictability	                        Route depends on topology and routing protocol used			Explicitly defined by the administrator																										
+
+the entire network infrastructure owned by a network administrator is called an autonomous network systems.Our internet is like a huge cluster of such various autonomous network systems.If such different atonomous systems wish to communicate
+with one another for some reason then comes the role of inter-domain routing(BorderGatewayProtocol(PathVector)) while communication in-between the network devices/hosts of the same network then the communication is called intra-domain routing ex-RoutingInformationProtocol(genrally,distance vector),
+OpenShortestPathFirst(Link-State routing).All the afforesaid protocols come under the category of unicasting(i.e.1Send1Receive)
+
+Distance vector routing is one of the methods by means of which routers which belong to the same autonomous system can share information in order to transfer ip packets among themselves and update routing tables for doing the same.Pre-requisite for DVR is that all the routers 
+know the total no.of routers which lie within the autonomous system.Propagation delay/cost/distance is also considered So if we consider a network contianing 4 routers connected its routing table(underDVR) contain info like the destination add,concerned cost  to forward theHello packet(4affirming the neighbour routers)&the next hop reached
+(in cases when theres no direct link to the dest->infinity cost is considered).The idea behind DVR is that the concerned nodes can share info only to their neighbours and that too only the distance vectors(middle-most column)
+
+bandwidth is directly proprtional to the msg-size
+Shortcomings of the DVR are attempted to overcome in Link-state routing.In this method of communication between routers the link-state tables are created which are different from the tables from the DVR due to the 
+
+Default routes - Default routes are either manually entered, or learned through a dynamic routing protocol. Default routes are used when no explicit path to a destination is found in the routing table. They are a 
+gateway of last resort option instead of just dropping the packet.
+A default route specifies a next-hop router to use when the routing table does not contain a specific route that matches the destination IP address. The default route can be entered manually as a static route or learned automatically from a dynamic routing protocol.
+
+A default route over IPv4 has a route entry of 0.0.0.0/0 and a default route over IPv6 has a route entry of ::/0. The /0 prefix length indicates that zero bits or no bits need to match the destination IP address for this route entry to be used. If there are no routes with a longer match, more than 0 bits, then the default route is used to forward the packet. The default route is sometimes referred to as a gateway of last resort.
+ 
+A virtual LAN (VLAN) is used to segment different Layer 2 broadcast domains on one or more switches. A VLAN groups devices on one or more 
+LANs that are conﬁgured to communicate as if they were attached to the same wire, when in fact they are located on a number of different LAN s
+egments. Because VLANs are based on logical instead of physical connections, they are extremely ﬂexible.
+For example, in the figure, the network administrator created three VLANs based on the function of its users: engineering, marketing, and 
+accounting. Notice that the devices do not need to be on the same floor.
+
+VLANs deﬁne Layer 2 broadcast domains. Broadcast domains are typically bounded by routers because routers do not forward broadcast frames. VLANs on Layer 2 switches create broadcast domains based on the 
+conﬁguration of the switch. Switch ports are assigned to a VLAN. A Layer 2 broadcast received on a switch port is only flooded out onto other ports which belong to the same VLAN.
+
+You can deﬁne one or many VLANs within a switch. Each VLAN you create in the switch deﬁnes a new broadcast domain. Trafﬁc cannot pass directly to another VLAN (between broadcast domains) within the
+ switch or between two switches. To interconnect two different VLANs, you must use a router or Layer 3 switch.
+
+VLANs are often associated with IP networks or subnets. For example, all of the end stations in a particular IP subnet belong to the same VLAN. Trafﬁc between VLANs must be routed. You must assign a VLAN 
+membership (VLAN ID) to a switch port on an port-by-port basis (this is known as interface-based or static VLAN membership). You can set various parameters when you create a VLAN on a switch, including 
+VLAN number (VLAN ID) and VLAN name.
+
+Switches support 4096 VLANs in compliance with the IEEE 802.1Q standard which speciﬁes 12 bits (2^12=4096) for the VLAN ID.
+
+A trunk is a point-to-point link between two  devices that carries more than one VLAN. A VLAN trunk extends VLANs across an entire network. IEEE 802.1Q defines a "tag" that is inserted in the frame
+ containing the VLAN ID. This tag is inserted when the frame is forwarded by the switch on its egress interface. The tag is removed by the switch that receives the frame. This is how switches know of which VLAN
+ the frame is a member.
+
+These VLANs are organized into three ranges: reserved, normal and extended. Some of these VLANs are propagated to other switches in the network when you use the VLAN Trunking Protocol (VTP).
+
+
+The switch builds and maintains a table (called the MAC address table) that matches the destination MAC address with the port that is used to connect to a node. The MAC address table is stored in the Content 
+Addressable Memory (CAM), which enables very fast lookups.
+
+The switch dynamically builds the MAC address table by examining the source MAC address of frames received on a port. The switch forwards frames by searching for a match between the destination MAC address
+ in the frame and an entry in the MAC address table. Depending on the result, the switch will decide whether to ﬁlter or ﬂood the frame. If the destination MAC address is in the MAC address table, it will send it out
+ the specified port. Otherwise, it will flood it out all ports except the incoming port.
+
+In the figure, four topologies are shown. Each topology has a switch and three hosts (HOST A, HOST B, and HOST C). The following describes the switching process illustrated in the figure as Host A sends a frame to 
+Host B :
+
+In the first topology, top left, the switch receives a frame from Host A on port 1.
+The switch enters the source MAC address and the switch port that received the frame into the MAC address table.
+The switch checks the table for the destination MAC address. Because the destination address is not known, the switch floods the frame to all of the ports except the port on which it received the frame. In the second 
+topology, top right, Host B, the destination MAC address, receives the Ethernet frame.
+In the third topology, bottom left, Host B replies to the Host A with the destination MAC address of Host A.
+The switch enters the source MAC address of Host B and the port number of the switch port that received the frame into the MAC table. The destination address of the frame and its associated port is known in the 
+MAC address table.
+In the fourth topology, bottom right, the switch can now directly forward this frame to Host A out port 1. Frames between the source and destination devices are sent without flooding because the switch has entries 
+in the MAC address table that identify the associated ports.
+
+All network devices on the same network must have a unique MAC address. The MAC address is the means by which data is directed to the proper destination device. The MAC address of a device is an address 
+that is burned into the NIC. Therefore, it is also referred to as the physical address or burned in address (BIA).
+
+A MAC address is composed of 12 hexadecimal numbers, which means it has 48 bits. There are two main components of a MAC. The ﬁrst 24 bits constitute the OUI. The last 24 bits constitute the vendor-assigned, 
+end-station address, as shown in the figure.
+Organizational unique identifier.
+
+
+IEEE
+
+
+
+24-bit OUI - The OUI identifies the manufacturer of the NIC. The IEEE regulates the assignment of OUI numbers. Within the OUI, there are 2 bits that have meaning only when used in the destination address 
+(DA) field of the Ethernet header:
+24-bit, vendor-assigned, end-station address - This portion uniquely identifies the Ethernet hardware.
+A MAC address can be displayed in any of the following ways:
+
+0050.56c0.0001
+00:50:56:c0:00:01
+00-50-56-c0-00-01(the left three bytes indicate the organizationally unique identifier&the ->3 indicates Network interface controller)
+
+Destination MAC addresses include the three major types of network communications:
+
+Unicast - Communication in which a frame is sent from one host and is addressed to one specific destination. In a unicast transmission, there is only one sender and one receiver. Unicast transmission is the predominant 
+form of transmission on LANs and within the internet.
+Broadcast - Communication in which a frame is sent from one address to all other addresses. In this case, there is only one sender, but the information is sent to all of the connected receivers. Broadcast transmission is 
+essential for sending the same message to all devices on the LAN. Broadcasts are typically used one a device is looking for MAC address of the destination.
+Multicast - Communication in which information is sent to a specific group of devices or clients. Unlike broadcast transmission, in multicast transmission, clients must be members of a multicast group to receive the
+ information. 
+
+Every device on a network has a unique IP address. An IP address and a MAC address are used for access and communication across all network devices. Without IP addresses there would be no internet.
+
+Despite the introduction of IPv6, IPv4 continues to route most internet trafﬁc today. During recent years, more traffic is being sent over IPv6 due to the exhaustion of IPv4 addresses and the proliferation of mobile and 
+Internet of Things (IoT) devices.
+
+An IPv4 address is 32 bits, with each octet (8 bits) represented as a decimal value separated by a dot. This representation is called dotted decimal notation. For example, 192.168.48.64 and 64.100.36.254 are IPv4 
+addresses represented in dotted decimal notation. The table shows the binary value for each octet.
+
+The IPv4 subnet mask (or prefix length) is used to differentiate the network portion from the host portion of an IPv4 address. A subnet mask contains four bytes and can be written in the same format as an IP address.
+ In a valid subnet mask, the most signiﬁcant bits starting at the left most must be set to 1. These bits are the network portion of the subnet mask. The bits set to 0 are the host portion of the mask
+
+For this example, look at 203.0.113.0/24. The network's IPv4 address is 203.0.113.0 with a subnet mask 255.255.255.0. The last octet of the subnet mask has all 8 bits available for host IPv4 addresses, which means that
+ on the network 203.0.113.0/24, there can be up to 28 (256) available subnet addresses.
+
+Two IPv4 addresses are in use by default and cannot be assigned to devices:
+
+203.0.113.0 is the network address
+203.0.113.255 is the broadcast address
+Therefore, there are 254 (256 - 2) host IP addresses available, and the range of addresses available for hosts would be 203.0.113.1 to 203.0.113.254.
+
+There are three types of IPv4 addresses:
+
+Network address - A network address is an address that represents a specific network and contains all 0 bits in the host portion of the address.
+Host addresses - Host addresses are addresses that can be assigned to a device such as a host computer, laptop, smart phone, web camera, printer, router, etc. Host addresses contain a least one 0 bit and one 1 bit in the 
+host portion of the address.
+Broadcast address - A broadcast address is an address that is used when it is required to reach all devices on the IPv4 network. It contains all 1 bits in the host portion of the address.
+A network can be divided into smaller networks called subnets. Subnets can be provided to individual organizational units, such as teams or business departments, to simplify the network and potentially make 
+departmental data private. The subnet provides a speciﬁc range of IP addresses for a group of hosts to use. Every network is typically a subnet of a larger network.
+
+For example, the network IPv4 network address is 192.168.2.0/24. The /24 (255.255.255.0) subnet mask means that the last octet has 8 bits available for host addresses. You can borrow from the host portion to create
+ subnets. For example, you need to use three bits to create eight subnets (23 = 8). This leaves the remaining five bits for the hosts (25 = 32).
+
+This can be more easily visualized when showing the subnet mask in binary format.
+
+/24 subnet mask: 11111111.11111111.11111111.00000000
+Modified /27 subnet mask: 11111111.11111111.11111111.11100000
+Because you need to create eight subnets, you designate three bits in the last octet for subnet use. The remaining five bits are for the hosts, and provide each subnet with 32 IP addresses.
+
+The following table lists the network address, broadcast address, and available host address range for each subnet.
+
+Notice the allocation for subnets and hosts speciﬁed for each row. You should now understand how designating bits to create subnets reduces the number of hosts available for each subnet. The number of hosts 
+available per subnet takes into account that network and broadcast addresses each require an IP address. The more bits you use to create subnets, the fewer bits you have for hosts per subnet.
+
+The table below shows the various options if you have a /24 subnet mask.
+Due to the depletion of IPv4 addresses, internally most addresses use private IPv4 addresses (RFC 1918). Use of variable-length subnet masks (VLSM) can also help support more efficient use of IPv4 address space. 
+Originally used when IPv4 addresses were classful (Class A, B, C). VLSM is a method of dividing a single network (or subnet) using different subnet masks to provide subnets with different number of host addresses.
+
+Network Address and Prefix RFC 1918 Private Address Range
+
+10.0.0.0/8 10.0.0.0 - 10.255.255.255
+172.16.0.0/12 172.16.0.0 - 172.31.255.255
+192.168.0.0/16 192.168.0.0 - 192.168.255.255
+Devices using private IPv4 addresses are able to access the internet via Network Address Translation (NAT) and Port Address Translation (PAT). Outgoing data from your device is sent through a router, which maps 
+your device's private IPv4 address to a public IPv4 address. When the data returns to that router, it looks up your device's private IP address and routes it to its destination.
+
+
+
+IPv6 is designed to be the successor to IPv4. IPv6 has a larger 128-bit address space, providing 340 undecillion (i.e., 340 followed by 36 zeroes) possible addresses. However, IPv6 is more than just larger addresses.
+
+When the IETF began its development of a successor to IPv4, it used this opportunity to fix the limitations of IPv4 and included enhancements. One example is Internet Control Message Protocol version 6 (ICMPv6), 
+which includes address resolution and address autoconfiguration features not found in ICMP for IPv4 (ICMPv4).
+
+The depletion of IPv4 address space has been the motivating factor for moving to IPv6. As Africa, Asia, and other areas of the world become more connected to the internet, there are not enough IPv4 addresses to 
+accommodate this growth.
+
+IPv6 is described initially in RFC 2460. Further RFCs describe the architecture and services supported by IPv6.
+
+The architecture of IPv6 has been designed to allow existing IPv4 users to transition easily to IPv6 while providing services such as end-to-end security, quality of service (QoS), and globally unique addresses. The 
+larger IPv6 address space allows networks to scale and provide global reachability. The simpliﬁed IPv6 packet header format handles packets more efﬁciently. IPv6 preﬁx aggregation, simpliﬁed network renumbering, 
+and IPv6 site multihoming capabilities provide an IPv6 addressing hierarchy that allows for more efﬁcient routing. IPv6 supports widely deployed routing protocols such as Routing Information Protocol (RIP), Integrated 
+Intermediate System-to-Intermediate System (IS-IS), OSPF, and multiprotocol BGP (mBGP). Other available features include stateless autoconﬁguration and an increased number of multicast addresses.
+
+Private addresses in combination with Network Address Translation (NAT) have been instrumental in slowing the depletion of IPv4 address space. However, NAT is problematic for many applications, creates latency, 
+and has limitations that severely impede peer-to-peer communications. IPv6 address space eliminates the need for private addresses; therefore, IPv6 enables new application protocols that do not require special processing 
+by border devices at the edge of networks.
+
+With the ever-increasing number of mobile devices, mobile providers have been leading the way with the transition to IPv6. The top two mobile providers in the United States report that over 90% of their traffic is 
+over IPv6. Most top ISPs and content providers such as YouTube, Facebook, and NetFlix, have also made the transition. Many companies like Microsoft, Facebook, and LinkedIn are transitioning to IPv6-only internally.
+In 2018, broadband ISP Comcast reported a deployment of over 65% and British Sky Broadcasting over 86%.
+
+IPv6 addresses are represented as a series of 16-bit hexadecimal ﬁelds (hextet) separated by colons (:) in the format: x:x:x:x:x:x:x:x. The preferred format includes all the hexadecimal values. There are two rules that can 
+be used to reduce the representation of the IPv6 address:
+
+Omit leading zeros in each hextet
+Replace a single string of all-zero hextets with a double colon (::)
+Leading zeros in each 16-bit hextet can be omitted. For example:
+
+Preferred
+
+2001:0db8:0000:1111:0000:0000:0000:0200
+
+No leading 0s
+
+2001:db8:0:1111:0:0:0:200
+
+IPv6 addresses commonly contain successive hexadecimal ﬁelds of zeros. Two colons (::) may be used to compress successive hexadecimal ﬁelds of zeros at the beginning, middle, or end of an IPv6 address (the colons 
+represent successive hexadecimal ﬁelds of zeros).
+
+A double colon (::) can replace any single, contiguous string of one or more 16-bit hextets consisting of all zeros. For example, the following preferred IPv6 address can be formatted with no leading zeros.
+
+Preferred
+
+2001:0db8:0000:1111:0000:0000:0000:0200
+
+No leading 0s
+
+2001:db8:0:1111::200
+
+Two colons (::) can be used only once in an IPv6 address to represent the longest successive hexadecimal ﬁelds of zeros. Hexadecimal letters in IPv6 addresses are not case-sensitive according to RFC 5952. The table below l
+ists compressed IPv6 address formats:
+
+The unspeciﬁed address listed in the table above indicates the absence of an IPv6 address or when the IPv6 address does not need to be known. For example, a newly initialized device on an IPv6 network may use the 
+unspeciﬁed address as the source address in its packets until it receives or creates its own IPv6 address.
+
+An IPv6 address preﬁx, in the format ipv6-preﬁx/preﬁx-length, can be used to represent bit-wise contiguous blocks of the entire address space. The preﬁx length is a decimal value that indicates how many of the high-order
+ contiguous bits of the address comprise the preﬁx (the network portion of the address). For example, 2001:db8:8086:6502::/32 is a valid IPv6 preﬁx.
+
+
+5.3.4
+IPv6 Unicast Addresses
+An IPv6 unicast address is an identiﬁer for a single interface, on a single device. A packet that is sent to a unicast address is delivered to the interface identiﬁed by that address. There are several types of IPv6 unicast 
+addresses including:
+
+Global unicast addresses
+Link-local addresses
+Unique local addresses
+Multicast addresses
+Note: There are other types of IPv6 unicast addresses, but these four are the most significant to our discussion.
+
+Global Unicast Addresses
+
+A global unicast address (GUA) is an IPv6 similar to a public IPv4 address. IPv6 global unicast addresses are globally unique and routable on the IPv6 internet. The Internet Committee for Assigned Names and 
+Numbers (ICANN), the operator for the Internet Assigned Numbers Authority (IANA), allocates IPv6 address blocks to the five Regional Internet Registries (RIRs). Currently, only GUAs with the first three bits (001), 
+which converts to 2000::/3, are being assigned, as shown in the figure.
+
+The figure shows four main textboxes with the number of bits above each one: 001 3 bits, global routing prefix 45 bits, S L A 16 bits, interface I D 64 bits. The word provider is above 001 and global routing prefix, site 
+above S L A, and host above interface I D.
+
+IPv6 GUA Format   :-
+
+he parts of the GUA in the figure above are as follows:
+
+Global Routing Prefix - The global routing prefix is the prefix, or network, portion of the address that is assigned by the provider such as an ISP, to a customer or site. It is common for some ISPs to assign a /48 global 
+routing prefix to its customers, which always includes the first 3 bit (001) shown in the figure. The global routing prefix will usually vary depending on the policies of the ISP.
+For example, the IPv6 address 2001:db8:acad::/48 has a global routing prefix that indicates that the first 48 bits (3 hextets or 2001:db8:acad) is how the ISP knows of this prefix (network). The double colon (::) following
+ the /48 prefix length means the rest of the address contains all 0s. The size of the global routing prefix determines the size of the subnet ID.
+Subnet ID - The Subnet ID field is the area between the Global Routing Prefix and the Interface ID. Unlike IPv4, where you must borrow bits from the host portion to create subnets, IPv6 was designed with subnetting 
+in mind. The Subnet ID is used by an organization to identify subnets within its site. The larger the Subnet ID, the more subnets available.
+For example, if the prefix has a /48 Global Routing Prefix, and using a typical /64 prefix length, the first four hextets are for the network portion of the address, with the fourth hextet indicating the Subnet ID. The 
+remaining four hextets are for the Interface ID.
+Interface ID - The IPv6 Interface ID is equivalent to the host portion of an IPv4 address. The term Interface ID is used because a single device may have multiple interfaces, each having one or more IPv6 addresses. It is 
+strongly recommended that in most cases /64 subnets should be used, which creates a 64-bit interface ID. A 64-bit interface ID allows for 18 quintillion devices or hosts per subnet. A /64 subnet or prefix (Global Routing 
+Prefix + Subnet ID) leaves 64 bits for the interface ID. This is recommended to allow devices enabled with Stateless Address Autoconfiguration (SLAAC) to create their own 64-bit interface ID. It also makes developing 
+an IPv6 addressing plan simple and effective.
+The GUA is not a requirement; however every IPv6-enabled network interface must have an Link-local Address (LLA).
+
+Link-Local Addresses
+
+An IPv6 Link-local Address (LLA) enables a device to communicate with other IPv6-enabled devices on the same link and only on that link (subnet). Packets with a source or destination LLA cannot be routed beyond 
+the link from which the packet originated.
+
+If an LLA is not configured manually on an interface, the device will automatically create its own without communicating with a DHCP server. IPv6-enabled hosts create an IPv6 LLA even if the device has not been 
+assigned a global unicast IPv6 address. This allows IPv6-enabled devices to communicate with other IPv6-enabled devices on the same subnet. This includes communication with the default gateway (router).
+
+The format for an IPv6 LLA is shown in the figure.
+
+The figure shows four main textboxes with the number of bits above each one: 001 3 bits, global routing prefix 45 bits, S L A 16 bits, interface I D 64 bits. The word provider is above 001 and global routing prefix, site 
+above S L A, and host above interface I D.
+
+IPv6 LLA Format
+
+IPv6 LLAs are in the fe80::/10 range. The /10 indicates that the first 10 bits are 1111 1110 10. The first hextet has the following range:
+
+1111 1110 1000 0000 (fe80) to
+
+1111 1110 1011 1111 (febf)
+
+IPv6 devices must not forward packets that have source or destination LLAs to other links.
+
+Unique Local Addresses
+
+Unique local addresses (range fc00::/7 to fdff::/7) are not yet commonly implemented. However, unique local addresses may eventually be used to address devices that should not be accessible from the outside, such as 
+internal servers and printers.
+
+The IPv6 unique local addresses have some similarity to RFC 1918 private addresses for IPv4, but there are significant differences:
+
+Unique local addresses are used for local addressing within a site or between a limited number of sites.
+Unique local addresses can be used for devices that will never need to access another network.
+Unique local addresses are not globally routed or translated to a global IPv6 address.
+Note: Many sites also use the private nature of RFC 1918 addresses to attempt to secure or hide their network from potential security risks. However, this was never the intended use of these technologies, and the IETF 
+has always recommended that sites take the proper security precautions on their internet-facing router.
+
+The figure shows the structure of a unique local address.
+
+The figure shows four main textboxes with the number of bits above each one: 001 3 bits, global routing prefix 45 bits, S L A 16 bits, interface I D 64 bits. The word provider is above 001 and global routing prefix, site 
+above S L A, and host above interface I D.
+
+IPv6 Unique Local Address Format
+
+Multicast Addresses
+
+There are no broadcast addresses in IPv6. IPv6 multicast addresses are used instead of broadcast addresses. IPv6 multicast addresses are similar to IPv4 multicast addresses. Recall that a multicast address is used to send a 
+single packet to one or more destinations (multicast group). IPv6 multicast addresses have the prefix ff00::/8.
+
+Note: Multicast addresses can only be destination addresses and not source addresses.
+
+There are two types of IPv6 multicast addresses:
+
+Well-known multicast addresses
+Solicited node multicast addresses
+Well-known IPv6 multicast addresses are assigned. Assigned multicast addresses are reserved multicast addresses for predefined groups of devices. An assigned multicast address is a single address used to reach a group 
+of devices running a common protocol or service. Assigned multicast addresses are used in context with specific protocols such as DHCPv6.
+
+These are two common IPv6 assigned multicast groups:
+
+ff02::1 All-nodes multicast group – This is a multicast group that all IPv6-enabled devices join. A packet sent to this group is received and processed by all IPv6 interfaces on the link or network. This has the same effect 
+as a broadcast address in IPv4.
+ff02::2 All-routers multicast group – This is a multicast group that all IPv6 routers join. A router becomes a member of this group when it is enabled as an IPv6 router with the ipv6 unicast-routing global configuration 
+command. A packet sent to this group is received and processed by all IPv6 routers on the link or network.
+The format for an IPv6 multicast address is shown in the figure.
+
+The figure shows four main textboxes with the number of bits above each one: 001 3 bits, global routing prefix 45 bits, S L A 16 bits, interface I D 64 bits. The word provider is above 001 and global routing prefix, site 
+above S L A, and host above interface I D.
+
+IPv6 Multicast Address Format
+
+A solicited-node multicast address is similar to the all-nodes multicast address. The advantage of a solicited-node multicast address is that it is mapped to a special Ethernet multicast address. This allows the Ethernet 
+NIC to filter the frame by examining the destination MAC address without sending it to the IPv6 process to see if the device is the intended target of the IPv6 packet.
+
+The format for an IPv6 solicited-node multicast address is shown in the figure.
+
+The figure shows four main textboxes with the number of bits above each one: 001 3 bits, global routing prefix 45 bits, S L A 16 bits, interface I D 64 bits. The word provider is above 001 and global routing prefix, site 
+above S L A, and host above interface I D.
+
+IPv6 Solicited-Node Address Format
+
+Load balancing improves the distribution of workloads across multiple computing resources, such as servers, cluster of servers, network links, and more. Server load balancing helps ensure the availability, scalability, and 
+security of applications and services by distributing the work of a single server across multiple servers.
+
+The load balancer decides which server should receive a client request such as a web page or a ﬁle. The load balancer selects a server that can successfully fulﬁll the client request most effectively, without overloading 
+the selected server or the overall network.
+
+At the device level, the load balancer provides the following features to support high network availability:
+
+Device redundancy — Redundancy allows you to set up a peer load balancer device in the configuration so that if one load balancer becomes inoperative, the other load balancer can take its place immediately.
+Scalability — Virtualization allows running the load balancers as independent virtual devices, each with its own resource allocation.
+Security — Access control lists restrict access from certain clients or to certain network resources.
+At the network service level, a load balancer provides the following advanced services:
+
+High services availability — High-performance server load balancing allows distribution of client requests among physical servers and server farms. In addition, health monitoring occurs at the server and server farm 
+levels through implicit and explicit health probes.
+Scalability — Virtualization allows the use of advanced load-balancing algorithms (predictors) to distribute client requests among the virtual devices configured in the load balancer. Each virtual device includes multiple 
+virtual servers. Each server forwards client requests to one of the server farms. Each server farm can contain multiple physical servers.
+Services-level security — This allows establishment and maintenance of a Secure Sockets Layer (SSL) session between the load balancer and its peer, which provides secure data transactions between clients and servers.
+
+The internet was built on various standards. You should understand the standard network protocols so you can communicate and troubleshoot effectively.
+
+Each protocol meets a need and uses standard port values. You should know when to use a particular protocol and know the standard port for connections. Many developers have been puzzled by a mismatched port
+value; therefore, checking these values can be a ﬁrst line of attack when troubleshooting.
+
+Telnet and Secure SHell (SSH)
+
+Telnet and SSH are both used to connect to a remote computer and log in to that system using credentials. Telnet is less prevalent today because SSH uses encryption to protect data going over the network connection. 
+Telnet should only be used in non-production environments.
+
+SSH connections can use a public key for authentication, rather than sending a username and password over the network. This authentication method means that SSH is a good choice to connect to network devices, 
+to cloud devices, and to containers.
+
+By default, SSH uses port 22 and Telnet uses port 23. Telnet can use port 992 when creating a session over Transport Layer Security (TLS) or SSL.
+
+HTTP and HTTPS
+
+HTTP and its secure version, HTTPS, are both protocols recognized by web browsers and are used to connect to web sites. HTTPS uses TLS or SSL to make a secure connection. You can see the http: or https: in the 
+address
+ bar on your browser. Many browsers also recognize ssh: and ftp: protocols and allow you to connect to remote servers in that way as well.
+
+NETCONF and RESTCONF
+
+Later in this course, you will use NETCONF and RESTCONF to manage a Cisco router. NETCONF uses port 830. RESTCONF does not have a reserved port value. You may see various implementations of different 
+values.
+ Commonly the port value is in the 8000s.
+
+To have multiple network operations, you want to make sure each protocol has a default port and use standards to try to avoid conﬂicts. TCP and UDP trafﬁc requires a destination port be specified for each packet. The 
+source port is automatically generated by the sending device. The following table shows some common, well-known port values for protocols used in this course. System port numbers are in the range 0 to 1023, though 
+you may see others in use for different reasons.
+
+Note: For a more complete list of ports, search the internet for TCP and UPD port numbers.
+
+Port value     -    Protocol
+43(option)-cisco wireless access points uses this in  requests to access the ip address IP of wireless LAN controller
+         68(4serverUsage2->DHCPmsgs) 67(4clientUsage4<-receiving msgs)
+			 TOTAL 65535
+Look for the following protocols
+HTTP, FTP, IMAP, POP3, SCP, SFTP, SMTP, TFTP, TELNET, LDAP, or FILE
+20,21 FTP          T                      
+22    SSH           T
+23, 992    Telnet   T
+25 SMTP     T
+53     DNS   T
+69 TFTP
+80   HTTP   T
+110 POP3  T
+161 SNMP
+443   HTTPS (HTTP over TLS or SSL(T)
+520  RIP
+666 Doom T
+830      NETCONF
+
+8008, 8080, 8888   RESTCONF
+
+DHCP
+As you have seen previously in this module, IP addresses are needed by all devices connected to a network in order for them to be able to communicate. Assigning these IP addresses 
+manually and one at a time for each device on the network is cumbersome and time consuming. DHCP was designed to dynamically configure devices with IP addressing information. DHCP works within a 
+client/server model, where designated DHCP servers allocate IP addresses and deliver conﬁguration information to devices that are configured to dynamically request addressing information.
+
+In addition to the IP address for the device itself, a DHCP server can also provide additional information, like the IP address of the DNS server, default router, and other conﬁguration parameters. For example, 
+Cisco wireless access points use option 43 in DHCP requests to obtain the IP address of the Wireless LAN Controller that they need to connect to for management purposes.
+
+Some of the beneﬁts of using DHCP instead of manual conﬁgurations are:
+
+Reduced client configuration tasks and costs - By not having to physically walk up to the device and manually configure the network settings, large cost savings are possible. This especially applies in the case of ISPs 
+that can remotely and dynamically assign IP addresses to the cable or Digital Subscriber Line (DSL) modems of their clients without having to dispatch a person each time a network configuration change is necessary.
+Centralized management - A DHCP server typically maintains the configuration settings for several subnets. Therefore, an administrator only needs to configure and update a single, central server.
+DHCP allocates IP addresses in three ways:
+The DHCP server ensures that all IP addresses are unique 
+
+Automatic allocation - The DHCP server assigns a permanent IP address to the client.
+Dynamic allocation - DHCP assigns an IP address to a client for a limited period of time (lease time).
+Manual allocation - The network administrator assigns an IP address to a client and DHCP is used to relay the address to the client.
+DHCP deﬁnes a process by which the DHCP server knows the IP subnet in which the client resides, and it can assign an IP address from a pool of available addresses in that subnet. The rest of the network conﬁguration
+ parameters that a DHCP server supplies, like the default router IP address or the IP address of the DNS server, are usually the same for the whole subnet so the DHCP server can have these conﬁgurations per subnet 
+rather than per host.
+
+DHCP deﬁnes a process by which the DHCP server knows the IP subnet in which the client resides, and it can assign an IP address from a pool of available addresses in that subnet. The rest of the network conﬁguration 
+parameters that a DHCP server supplies, like the default router IP address or the IP address of the DNS server, are usually the same for the whole subnet so the DHCP server can have these conﬁgurations per subnet 
+rather than per host.
+
+The speciﬁcations for the IPv4 DHCP protocol are described in RFC 2131 - Dynamic Host Conﬁguration Protocol and RFC 2132 - DHCP options and BOOTP Vendor Extensions. DHCP for IPv6 was initially described in 
+RFC 3315 - Dynamic Host Conﬁguration Protocol for IPv6 (DHCPv6) in 2003, but this has been updated by several subsequent RFCs. RFC 3633 - IPv6 Preﬁx Options for Dynamic Host Conﬁguration Protocol (DHCP) 
+version 6 added a DHCPv6 mechanism for preﬁx delegation and RFC 3736 - Stateless Dynamic Host Conﬁguration Protocol (DHCP) Service for IPv6 added SLAAC. The main difference between DHCP for IPv4 and DHCP
+ for IPv6 is that DHCP for IPv6 does not include the default gateway address. The default gateway address can only be obtained automatically in IPv6 from the Router Advertisement message.
+
+In cases in which the DHCP client and server are located in different subnets, a DHCP relay agent can be used. A relay agent is any host that forwards DHCP packets between clients and servers. Relay agent 
+forwarding is different from the normal forwarding that an IP router performs, where IP packets are routed between networks transparently. Relay agents receive inbound DHCP messages and then generate new 
+DHCP messages on another interface, as shown in the figure.
+Clients use port 67 to send DHCP messages to DHCP servers. DHCP servers use port 68 to send DHCP messages to clients.
+
+DHCP operations includes four messages between the client and the server:
+
+DHCPDISCOVER - Server discovery
+DHCPPOFFER - IP lease offer
+DHCPREQUEST - IP lease request
+DHCPACK - IP lease acknowledgment
+If the offer is no longer valid, then the selected server responds with a DHCP negative acknowledgment (DHCPNAK) message. If a DHCPNAK message is returned, then the selection process must begin again with a 
+new DHCPDISCOVER message. After the client has the lease, it must be renewed prior to the lease expiration through another DHCPREQUEST message.
+
+
+In the figure, the client broadcasts a DHCPDISCOVER message looking for a DHCP server. The server responds with a unicast DHCPOFFER. If there is more than one DHCP server on the local network, the client may 
+receive multiple DHCPOFFER messages. Therefore, it must choose between them, and broadcast a DHCPREQUEST message that identifies the explicit server and lease offer that the client is accepting. The message is 
+sent as a broadcast so that any other DHCP servers on the local network will know the client has requested configuration from another DHCP server.
+
+A client may also choose to request an address that it had previously been allocated by the server. Assuming that the IPv4 address requested by the client, or offered by the server, is still available, the server sends a 
+unicast DHCP acknowledgment (DHCPACK) message that acknowledges to the client that the lease has been finalized. If the offer is no longer valid, then the selected server responds with a DHCP negative 
+acknowledgment (DHCPNAK) message. If a DHCPNAK message is returned, then the selection process must begin again with a new DHCPDISCOVER message. After the client has the lease, it must be renewed 
+prior to the lease expiration through another DHCPREQUEST message.
+
+The DHCP server ensures that all IP addresses are unique (the same IP address cannot be assigned to two different network devices simultaneously). Most ISPs use DHCP to allocate addresses to their customers.
+
+DHCPv6 has a set of messages that is similar to those for DHCPv4. The DHCPv6 messages are SOLICIT, ADVERTISE, INFORMATION REQUEST, and REPLY.
+
+
+In data networks, devices are labeled with numeric IP addresses to send and receive data over networks. Domain names were created to convert the numeric address into a simple, recognizable name.
+
+On the internet, fully-qualified domain names (FQDNs), such as http://ww​w.cisco.com, are much easier for people to remember than 198.133.219.25, which is the actual numeric address for this server. If Cisco decides 
+to change the numeric address of ww​w.cisco.com, it is transparent to the user because the domain name remains the same. The new address is simply linked to the existing domain name and connectivity is 
+maintained.
+
+Note: You will not be able to access ww​w.cisco.com by simply entering that IP address 198.133.219.25 in your web browser.
+
+The DNS protocol defines an automated service that matches domain names to IP addresses. It includes the format for queries, responses, and data. DNS uses a single format called a DNS message. This message format 
+is used for all types of client queries and server responses, error messages, and the transfer of resource record information between servers.
+
+DNS Message Format
+
+The DNS server stores different types of resource records that are used to resolve names. These records contain the name, address, and type of record. Some of these record types are as follows:
+
+A – An end device IPv4 address
+NS – An authoritative name server
+AAAA – An end device IPv6 address (pronounced quad-A)
+MX – A mail exchange record
+When a client makes a query to its configured DNS server, the DNS server first looks at its own records to resolve the name. If it is unable to resolve the name by using its stored records, it contacts other servers to 
+resolve the name. After a match is found and returned to the original requesting server, the server temporarily stores the numbered address in the event that the same name is requested again.
+
+The DNS client service on Windows PCs also stores previously resolved names in memory. The ipconfig /displaydns command displays all of the cached DNS entries.
+
+As shown in the table, DNS uses the same message format between servers. It consists of a question, answer, authority, and additional information for all types of client queries and server responses, error messages, 
+and transfer of resource record information.
+
+DNS Message Section
+
+Description
+
+Question
+
+The question for the name server
+
+Answer
+
+Resource Records answering the question
+
+Authority
+
+Resource Records pointing toward an authority
+
+Additional
+
+Resource Records holding additional information
+
+DNS Hierarchy
+
+DNS uses a hierarchical system based on domain names to create a database to provide name resolution, as shown in the figure.
+
+The figure shows the DNS Hierachy tree. At the top is the Root Level Domain with the TOp-Level Domains(TLD) connected undererneath the Root Level Domainmain. THe TLDs are .net, .edu, .com,.au, .co, and 
+other top-level doamins. Under the .com TLD is the Second Level domain www.cisco.com and under cisco.com are www.cisco.com , ftp.cisco.com, and mail.cisco.com.
+
+
+Root Level DomainTop-Level Domain (TLD)Second Level Domaincisco.comwww.cisco.comftp.cisco.commail.cisco.com.net.edu.com.au.coOther
+Top-Level
+Domains
+The naming structure is broken down into small, manageable zones. Each DNS server maintains a specific database file and is only responsible for managing name-to-IP mappings for that small portion of the entire 
+DNS structure. When a DNS server receives a request for a name translation that is not within its DNS zone, the DNS server forwards the request to another DNS server within the proper zone for translation. DNS is 
+scalable because hostname resolution is spread across multiple servers.
+
+The different top-level domains represent either the type of organization or the country of origin. Examples of top-level domains are the following:
+
+.com – a business or industry
+.org – a non-profit organization
+.au – Australia
+.co – Colombia
+Note: For more examples, search the internet for a list of all the top-level domains.
+
+Service Level Agreements (SLAs) are contracts between parties that consume infrastructure services and parties that provide these services.
+Address Resolution Protocol (ARP) is a protocol or procedure that connects an ever-changing Internet Protocol (IP) address to a fixed physical machine address, also known as a media access control (MAC) address, in a 
+local-area network (LAN).It maps an Internet Protocol address to a MAC address that is recognized in the local network. ARP is used to keep track of all devices that are directly connected IP
+subnets of the switch. The switch maintains an ARP table which is made of mapped IP addresses and MAC addresses. When a packet needs to be routed to a certain device, the switch looks up the IP address of the 
+device in its ARP table to obtain the MAC address of the destination device. The ARP table includes both static and dynamic addresses. Static addresses stay in the ARP Table until they are manually removed, while 
+dynamic addresses are removed after a specified time-out interval.
+Enterprise resource planning (ERP) refers to a type of software that organizations use to manage day-to-day business activities such as accounting, procurement, project management, risk management and compliance, 
+and supply chain operations.
+An ERP software solution seeks to streamline and integrate operations, processes and information flows in an enterprise, to synergize the resources of an organization namely men, material, money and machine. In 
+other words, ERP systems integrate all data and processes of an organization into a unified system. A typical ERP will use multiple components of computer software and hardware to achieve the integration. A key ingredient of most ERP systems is the use of a unified database to store data for the various system modules.
+
+Switching Protocols :
+Spanning TreeProtocol-->Helps in creating loop free topologies.The need4this protocol is2prevent the switches from crashing which initially were broadcasting ARP request to their respective neighbours(in order to know their ips) while being connected in a loop. ' . in order to sucurely forward an IP packet to the destination 
+a specific switch needs to cater as a routing bridge for all the ip transactions.A particular port is blocked 2 avoid receiving ARP requests.The root bridge decides the best path 2 route data in the network.All the switches available in a network forward data to this root bridge which in turn forwards the data to the destination by 
+selecting the best path.Within a spanning tree protocol a network can have only a single Root bridge.This bridge shall have all of its ports in active/forwarding status.This bridge is identified by means of FIRSTLY  the priority value(def:32768&if it ends up being same4all the switches in the loop then-->)and SECONDLY the 
+media access control address(least one of course).4this identificaition of BridgeID(=PV+MAC) BridgeProtocolDataUnit are  sent to all the switches of the loop.Also the switch port which is connected to the shortest path 2 reach the root bridge shall be considered as a designated/root port while the others are considered as 
+non-designated port.4 identifying a root port first the port cost(speed of a link connected to a port.Higher the bandwidth lower the port cost),secondthe BridgeID and lastly the lowest forwarding physical port no.I.E. if the first two conditions are the same in all the looped-switches(including the root brdige) then the port which connects
+2 the least port no.(1portno.<2ndportno.<3rdPortno.
