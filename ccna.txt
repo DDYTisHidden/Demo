@@ -1,183 +1,70 @@
-All ways of data-exchange->Simplex,Half-duplex&Full-duplex(dataTransmission in both directions on a single carrier at the same time).Not Multi-plex
-routing protocol EIGRP OSPF SpanningTP ether-channels
-For end devices to be able to communicate over network,each device must abide by the same set of rules.These rules are called protocols and they have many functions within a network.Network protocols define
-a common format&set of rules for exchanging messages b/t devices.Protocols are implemented by devices&intermediary devices in software,hardware||both.Each network protocol has its own function,format&reules for
-communications 
-Telnet simplifies the access to remote devices.However the data contained in a Telnet packet is transmitted un-encrypted therefore it is highly recommended to enable ssh on devicess4Secure remote access.SSh 
-encrypts the traffic between the source&destination.
-# hostname otherThanDefualt
-#ip domain name someName
-#crypto key-generate rsa general-modulus 1024(smaller the size of the key less time it takes to encrypt&decrypt(360->2048)
-(verify/create a 4 local db entry) # username Bob secret cisco (enryption by MD5)
-# line vty 0 4
-(config-line)# login local //for authenticating the vty line against the local db
-(config-line)#transport input ssh// 2 enable vty inbound session
-//By default, no input session is allowed on vty lines. You can specify multiple input protocols including Telnet and SSH using the transport input {ssh | telnet} command.
-(config-line)#exit
-(config)#
-While the Ethernet is responsible for delivery of msgs from NIC2another which are operating on the same LAN.
-IP is the protocol responsible for delivery of msgs b/t devices& routers use these internet protocols to forward msgs between multiple networks
-Internet protocol is a set of rules which the internet follows.It is of 2 types IPversion4&version6 :it consists of 4 no. serperated by dots.These no. shall vary from 0to255 however decimal no. are not understood by machine.
-IPV4 is a 32(8bits=1byte and v4 has 4bytes) bit address. pow(2,32) = 4 , 294 , 967 , 296 devices can b addressed and connected to the internet but these days we have more than 4 billion internet users among including 
-both mobile&pc users.Here come the role of IPv6 addressing which can accomodate the addressing of a greater no. of users than 4 billion.An IPv6  is a 128 bit address written as a group of 8hexadecimal no.(from 10we have A
-seperated by : .Dynamic Ip addresses : when we try to communicate with the internet our internet service provider assigns an ip addresse to us from a given range of ip addresses.Thereby it becomes possible fot the inernet 
-to send data to us as and when demanded.When we terminate this communication/session with the internet and try to communicate the second time our ISP assigns a differnt ip address from the same range of addresses.
-That is2say that in dynamic ip addressing the ip address of a host changes every time it accesses the internet.Controray to this static ip addresses are static ip addresses are permanent ip add These are used by DNS servers
-which are nothing but computers which enables us to open a website on our pc.Static ip addresses provide information like the location of a user w.r.2 his/her continent,country,city&even the internet service provider.Once the 
-ISP is recognized it becomes possible to trace the user accessing the internet while having a static ip address.This is the reason why static ip addresses are considered harmful as it possess the risk of location being traced(best internet
-practice can avoid this )
+Internet & interanet  Haas,PaaS,IaaS,SaaS, why Cloud computing,why router single line definition
+NIC ,ethernet adapter,LAN card(10/100/1000mbps) 
+Repeater ->from onwards 100m we need repeater cause LAN ceases to operate
+Hubs(10mbps)->concetrate connections.In other words  simple hub(passive hub)non-intelligent hub(as it asks for where to broadcast every single time before trnsfering dat)
+switch(100mbps) physically similar2Hub-> 8,16,24,32 ports.when it is on switch has a table with the ip addresses of devices.Active Hub(as it is an intelligent device) as it not only
+Router->can do almost everything as above.Helps in creating a communication between two different networks.
+192->broadband are pre-configured as 192 itself.check ur lappy's ipv4 at cmd by ipconfig mine is 192(preferred)itself.wifi and cable both have lan card.ipconfig all
+Dynamic Host confuguration protocol(Default Gateway)->when IP(public->global)add given by the server   ip address allot by modem 192(private->local)
+we get ip from modem(2 ip addresses)    @ address bar what is my ipv4 add when isp assigned me public ip 49(public ip->then only hackers can access my system) add that ip2address bar
+you get jio/airtel username admin and password is itself.U can change dhcp's ip series
+21- 23 25 53 69 161 520  also HTTP-80   total ports 65535
+compute+keyboard+mouse->PAN
+internet->Wide area network
+1->OSI->Layered architecture data moves from one layer to another with respect to the processing.The user always works on the 7th Application layer. ' . from the user the seventh layer would be physical layer.
+.Each layer performs specific operations thereby dividing overall objective into simpler tasks.Single networking tasks are done this way.Physical layer->Hubs 
+Data-Link layer can't understand what the presentation layer processes.Phy can't under App.But Session+App=Presentation.every layer has its own defined set of protocols for receiving and sending data.
 
-2-tier Architecture ->This archit has 2 layers.That is the Client layer(users who access the APPLICATION)&the server(App=(.net,java,puthon)+DB(MySQL,Oracle(GB 4 RAM also required)(4GBRam,2CPU,20HDD) layer. ' . clashes for 
-CPU&storage usage. Which is the reason why the client is not properly served. ' . it is advised to keep the DB and the app on serperate machines.
-Client->who requests a resouce from a server
-Server->who supplies the requested resource.
-3-Tier Architecture ->Has 3 layer- Client(PresentationL), App(Bussiness Logic)&DB(Data) layer respectively.Since each layer/component has its own OS&corresponding CPU&RAM resources . ' .No clashes.
-AppServer : The server where our application(.net,java,Python)is hosted.It should always be Private.However then the clients won't be able to access it. Here comes the role of a Web-server which itself would be public and would perform
-the action of redirecting the clients' http/https  accessing it to our application server.It does not have any coding.Like some mediator b/t the client and the applciation server(Tomcat)just cause we don't want it to be public.
-DBServer : The server where our DB resides(?) that stores our data.
-Every app has its own server with its own unique name/hostName/DN or IP.We can call it as multi-tier architecture || N-tier(cause of that Web-server layer)architecture
+Physical layer converts:voltage||Electronic signals->it sets up bit(4incoming msgs) streams across networks.bits to electronic signals(4outgoingMsgs).It manages the interface b/t the computer&the physical medium of the network.It 
+(Connectors,wiresVoltages,DataRates)       constitutes the foundation4the driver software of the units such as NICs.Deals with modems,hubs(repeater),connectors
 
-Mac-Addresses are also referred to as physical/hardware Address.They uniquely identify an adapter on a LAN.
+Data-Link Layer->It sets up links across physical network handles SPECIAL data frames(or packets) b/tNetwork layer&thePhysical layer.@receiver's end,this layer converts raw-data coming from the physical into data frame format,2B passed on further
+                           to the network layer while @sender's end it converts DFs->raw-data format which gets passed on further2the physical layer.Provides a reliable data transfer via media;physical address network topology
+                           flow control&error notification
 
-The boundary between a host and the link that connects the host to the internet is called an interface.Since a host has a single port to link internet therefore a single interface it has; unlike router which has a no. ofVar 
-links/ports to the internet and therefore and has a greater no. of interfaces.The purpose of these interfaces is to send and receive datagrams.This is possible only if these have their individual network addresses.These addresses
-are called Internet protocol addresses which are assigned to these interfaces and not2the host||the router.
-8bits=1byte ---> IPv4 has 4bytes(||32bits(INT)) each seperated by dots.This is called the dotted-decimal notation.A portion of this address is defined by the subnet to which it is connected.If a couple of hosts are connected 
-2 a router via a wirelessAccessPoint then the interface to which the WAP is connected the router shall have the same network address as the interfaces of the hosts.Also a network which connects the host interfaces with 
-a router interface is called a subnet.As stated before interfaces which belong to the same subnet will have the same network address.AND the address 223 . 1 . 1 . 0/24 is called the subnet mask which indicates that all the 
-interfaces of the concerned subnet shall have the same network prefix upto 24.Different subnets shall have different network addresses.
+Network Layer ->manages addressing4the msgs2 b delivered& manages routing of this data.Performs transaction of logic network addresses&names into their physical equivalents.Decides routing network traffic b/t computers.Manages packet swictching
+                          &deals with network congestion.It basically provides connectivity&path selection; routing domian. It is the layer of intelligent devices like router&AppFirewall.
 
-Class A(Before 1980 entire 32 bit address was segretted as the first 8(2^8Net possible) network prefix would represent the network while the entire remaining24(2^24 hosts possible)would represent the host bit no.) :-
-the first bit of classA add is always 0 for identifying purpose.The network prefix is uniquely set to 0 for classA networks(. ' . possible no. of IP s in A is 2^31 similarly no. of networks possible is 2^7=128 but 0 and128 reserved
-4 diagnostic functions&loopback. ' . 126 networks possible).The first octet is used2representthe network while the remaining3 octets||24 represent the host.Speaking of hosts we have 2^24 possiblities where 2 the net.0.0.0 can't be given 
-because that represents the network and net.255.255.255 is the last possible address which is reserved as DirecetedbroadcastAddress for flodding the incoming msg to all the  hosts of the network(" from google or any other website
-in order to know the class of a network is to& the network ip with the default mask of specified class.Of ClassA is 255.0.0.0.Ex : 64.0.0.8 convert 64 in binary as well as 255.U'll get 1 only when both the operands are one
-ClassC 192 - 223 .Its 4thOctet represents the host while its default mask 255.255.255.0(& with 255(11111111 returns the bit itself.Similarly AND with 00000000 gives 0) 
-4finding the n no. host of a network first don't alter the network prefix,also 4 instance 201.20.30.0 is the network&201.20.30.255() is reserved for directBroadcast conserns() therefore can't b considered. ' .4th host will be " ".4
+Transport Layer->enables transmission of data across a network 4 end2end communication.Performs Segmention of long data units into smaller segments called as packets(ususally based on the bandwidth/allowed packet size4the involved medium 
+of transition Assembling&performs squencing of data chunks arriving at the receiver.Provides confirmation of successful transmissions&signals4resending the erroneous data packets.It enables the transfer of a messageb/t 
+the processes.It manages the data transportation between hosts,establish,maintain&terminate virtual circuits;info flow control;error detection&recovery.
 
-Subnetting is process of creating new networks/subnets by stealing bits from the host portion of subnet mask.This stealing of bits from hosts creates more new networks but fewer hosts per network.Consider the following classC
-network : 192 . 168 . 252 . 0 its default subnet mask will be 255 . 255 . 255 . 0 this single network can b segmented/subnetted into multiple networks.
-The Internet follows the ClasslessInterDomainRouting strategy for IP adress management.This mechanism generalises ip address as a . b . c . d/x upto x bits all the interfaces shall have the exact same bit. x=network prefix
-It is a method of representing a subnet mask.It identifies the number of binary set to a 1(||on) in a subnet mask.
-A network which uses its default subnet is referred to as a classful network while the network which uses subnetting in its subnet mask in referred to as classless network.()
+CMD-- netstat -a(4all type of connection)
 
-Rpeaters are the most basic form of forwarding devices which has only 2 ports(I&O).They operate at the physical layer.When they receive a signal,they re-generate a bit2bit exact copy of it before the signal becomes 2
- weak/corrupted to be transmittedThis is done to extend the length upto which it needs to b transmitted over the same network.Imp it does not amplify a signal ;it only creates a copy of the signal bitBybit(after it 
-becomes weak/corrupted)and  then 
-regnerates it to the original strength.
+SessionL->Used2interhost communicationHelps in identifying&managing communication channel(termed as a session)b/t two devices over a network.App on either end of the session are able2communication4the duration of the valid session.
+Resposible for initiating,maintaining&terminating sessions.Resposible4security&access control2session information(via session participant identification).Responsible4synchronization services&4the checkpoint services
+It basically establishes,maintains&terminates logical sessions b/t apps||borwsers &servers.Gateway
 
-Hubs are multiPort repeaters which operate at the physical layer can have 24||<.It connects various wires coming from different branches4Ex- the central connector in star topology connects different stations.Hubs do 
-not possess the capability to filter data. ' .data is transmittedto all connected devices || the collision domain is the same for all hosts connected through a hub is one.Also they do not have the intelligence of determining 
-the best path 4dataPackets which causes inefficiency&wastage.
-ActiveH :These hubs have thier own power supply &can clean,boost&relay the signals along with the network.They serve both as repeaters as well as a wiring center.These are used to extend the distance b/t nodes. 
-PassiveH:These hubs collect power supply from the activeH&wiring from the nodes.They can relay signals on to the network  without cleaning&boosting them and can't extend the distance b/t nodes.
-IntelligenH: These work like activeH and have remote management capabilities.One can monitor the traffic passing through and make configuration4each port in the hub.Also they offere flexible data reates4networkdevices
+PresPurpose->4Data representation&encrytpion/decryption
+Presentation->manages data-format info(serves as translator),4outgoing msgs,converts Dinto a generic format4network transmission4incoming msgs,it converts data from the generic network format2format that receiving applciation
+can understand; It is responsible 4conversion protoc,data encryption/decryption,||data compression/decomression.A special soft facility-redirector operates at this layer.It determines if a request is network related||not&forwards network related
+requests2 an appropriate network resource.     It ensures the data is readable by the receiving system;manages format of the data&its structure&syntax for application layer.Gateway
 
-Bridges are like those repaters which possess content filtering intelligence.That is2say that it can perform the functionality of filteringcontent by reading the MAC add of the source&destination.The 
-ablity to read MAC addresses enables a bridge to make intelligent decisions about forwarding packetsIt is also used for interconnecting two LANs working  on the same protocol.They can seperate a network into 2segments
-such that the two segments appear as one to higher protocols.It operates at the data-link layer&similar to repeaters it is also a2-port device
+ApplicationL->Top layer which provides a set of interfaces4sending&receiving applications&2 use network services,such as:  Msg handling , DB query processing.It is responsible4providing services2the end-user.Used2process application
+It offers netowrk services like email,terminal emulation,file transfer,etc.Ex the CLI where i can ping google by typing the cmd ping google.com -t.Then i'll b able to see the ICMP traffic.Which tries to reach the ip||the host name.Gateway
 
-Transparent :These are the bridges in which the stations are completely unware of the bridge's existenceI.E. whether or not a bridge is addes/deleted from the network,reconfiguration of the sations is not needed.Uses 2 
-processes :bridge forwarding&bridge learning
+The user accesses the network resources by means of this applicaiton layer->the data shared by the user is translated,encrypted(De)&compressed(De) by the Presentation->a connection is established b/t the app&the server&this session is created&managed 
+by the session layer-> the data is divided into smaller chunks() whose error recovery&successful delivery2 the networklayer is Transport Layer's responsibility->Netowork.Here sender's and receiver's addresses(including header&driller info)are attached to 
+the units of data(packet).->DataLink here the packets are further decomposed into frames,organized from bits and also provides hop2hop delivery->transmit bits over a medium(LAN wires) originally created from the conversion of Electrical signal.Also provide
+mechanichal and electrical signals.
 
-SourceRoutingBridges : in these bridges the routing operation is performed by the source station and the frame specifies which route2follow.The host can discover the frame by sending special frame called the discovery
-frame,which spreads through the entire network using all possible paths to the destination.
-Switch(EthernetSwitch||WirelessAccessPoint) : is a multi-port bridge with a buffer(?) and a design that increases its efficiency(no. of ports inc->traffic dec) and perfomance.It is data-link layer device which conducts error checks before forwarding packets.This 
-makes a switch highly efficient plus it forwards good packets selectively to the correct port only.In other words the switch divides the collision domain of hosts however , the broadcast domain still remains the same
+2->Explian TCP/IP model with OSI model :
+TCP(4) while OSI(7)
+TCP/IP AppL(4) == OSI App(7th)+PresL(6th)+SessL(5th)
+TCP/IP InterL(2) == OSI Network(3rd)
+Lower layer Network layer TCP/IP has similar functions as OSI Model's lower 2 layers(Phyical&Data-LinkL)
+Bits(physical)->the language which a computer system understands.0:no charge   1: +vely charged
+Frame(DL)->Bunch of data created by network communincation hardware.Ex-NIC,router interfaces at DL lyer
+Ethernet(802.3)&Wifi(802.11) frame format->Src,Des&Router Mac Address.4TCP/IP communcations payload4frame.It is the actual information being shared b/t src&des, whose size-limit is 02 2312 bytes.(byte=8bits. ' . max-18496 bits).CRC,durationSequence control&
+frame control.
 
-Router : is a device like a switch that forwards packets of data based on their IP addresses.It is mainly a network layer device which normally connects LANs and WANs together & have dynamically updating routing table 
-based on which they make decisions on routing the data packets.A router divides the broadcast domain of hosts connected through it.
-Types of Ethernet cabling :(A)Stright-throughC(Host->Switch||Hub   Router->Switch||Hub)   (B)CrossoverC(S->S   Hu2Hu  Ho2Ho Hu2S Router direct2host)      (C)RolledCable(Ho2Router's COM port)                      this i
-Categories of Ethernet : EthernetTenMBPS FastEthernet(100Mbps) GigabitEthenet  10GBEthernet
-Network Topology : It defines the structure of the network.One part of the topology definition is the physical topology which defines the actual layout of the wire||media while the other part is the logical topology which
-defines how the media shall be accessed by the hosts4sending data.   
+Network Packet=EthernetHeader>IPheader>TCPheader>DATA/payload
+Steam of binary octets of data of some arbitrary length,typically used2 describe chunks of data created by software components
+DATA=APP+PRESENTAION+SESSION   
+Segments(received from sessoins layer is in the form of chunks.TrnasportL) ->Chunk of data that has been prepared4TCP.Usually a segment is a chopped||manageable 'data stream'
+Data->Thsi is the generic term that is often used while describing protocols that function at higher levels,usually the network layer&up.
 
-Gateway : A passage that estabilishes a connection b/t 2 networks which may work upon different networking models.They basically serve as messenger agents which transport data from one network to the other after interpretting it.Gateways are also called
-protocol convertors and can operate at any network layer.These generally more complex than switches.
 
-Brouter: These devices combine the features of both the bridge and the router.These can operate either at the network layer||@the data-link layer.Serving as a router it can forward packets across networks while working as a bridge it can filter the local area network traffic
-
-NIC: It is a network adapter that is used to connect the computer to a network.It is installed in order to allow a computer system to establish a LAN.It has a unique id on its chip and has a connector to attach a cable to it.It is layer 2 device i.e. it can operate both in the physical
-as well as data-link layer.It basically serves as an interface between the computer and the modem/router.
-
-Swtiches : are similar to bridges.Swtiches assist packet forwarding by creating a collision domain on each switched port.A table is built containing this map , which allows the switch to forward traffic only to the port attached to the destination port.
-
-BusT :- It uses a single backbone cabel which is terminated at both the ends.All the hosts are connected directly to this backbone
-
-RingT :-
-
-StarT :-It connects all the hosts to a central point of concentration.
-
-ExtendedStar :- This topology links individual stars together by connecting the hubs and/or switches.This topology extends the scope||coverage of a network. 
-
-HierarchicalStar :-Similar2ExtendedStar.
-
-MeshT :-
-
-Mac -Add table in Ethernet Switches :Mac-add tables are build in EthSwit by means of a dynamic learning process wherein source mac-address of the incoming frame is considered.It gets stored in the mac-table and when a frame enters the control panel
-whose mac-address is the same as the source address of some previous frame it gets forwarded successfully
-Switch#show running-config "    " show startup-config   "   " show version(of CISCO IOS) "  " show vlan(vlan info)   "     "show flash|| "  " show dir flash (2examine flash memory)
-
-11->Muli-Lyer Switch :- refers to any switch which forwards traffic at layers higher than the layer 2.A layer 3 switch is considered as a multi-layer switch because it can forward frames in the layer 2 as well as forward packets in the layer 3.A layer-4 switch provides
-the same functions as a layer 3 switch but shall also examine&cache Transport OSI 4th layer accplicatoin flow information,such as the TCP||UDP port.
-
-Spanning Tree protocol : runs on layer2 of OSI model which runs on switches&bridges
-
-10->Difference b/t Collision&Broadcast Domain : 
-(i)A collision occurs when hosts send a packet at the same time on the shared network segment.The packets collide and the devices are required to send the packets again which reduces the network efficiency While a broadcast domain is the domain in which 
-a broadcast is forwarded in a network.In this domain each and every device can reach out to each other in DL layer by means of the broadcast domain in the network.
-
-(ii)Collisions are often seen in a hub because each and every port on a hub is in the same collision domain WHILE all ports of a hub||switch are by default in the same braodcast dmain.
-
-(iii)Each port of a router,bridge||switch is in a seperate collision domain WHILE all ports on a router are in different broadcast domains.
-
-A switch can b logically segemented into seperate broadcast
-
-   				R  O  U  T  I  N  G
-An Autonomous(independent entity) System is a connected gorup of one/< IP prefixes run by 1 || < network operators which has a single&clear routing policy.
-Speaking of EGP  these are the protocols which have their influence confined within an autonomous system.4IPv4 OpenShortestPathFirst,RoutingInformationProVersion2&EnhancedInteriorGatewayRoutingProtocol(CisCo)
-similarly 4IPv6 dynamic routing we have OSPFv3,EIGRP for IPv6 &RIPng(nextGen)
-
-OpenShortestPathFirst is an interiorgateway protocol which means that is it can b used only within an autonomous system.It is comes under the category of link-state routing that is to say that each and every link associated with our network shall
- have a cost assigned to it.Each and every link has a cost and this routing is based on the connectivity between routers.Factors like throughput,reiabilty&round trip time play a vital role2.The path with the lowest cost is considered as the fastest one 
-while the links with 
-identical costs are load-balanced.It is a dynamic routing protocol which means it has the ability to detect any changes made in the network link state&updates the routing structure very quickly.Suppose a network link goes down than OSPF shall find the best path around that 
-connection and shall route traffic to the better direction.OSPF is known for its low convergence times||fast convergence.These protocols group various sections of a network into areas where default area is 0.These areas have their own DBs of link states i.e. they are flexible.
-OSPF helps in learning about every router&subnet of the network such that each and every router has the same information about the network as each other.This is performed by routers sending Link-state advertisement until it is flooded and all the router&subnet concerned information
-is shared to all the member routers of the AS.This LSA information is stored in every router's individual Link-StateDB equally It is a complex
-protocol that is often used in large enterprize networks.It is a protocol which is capable of fast convergence&load sharing/balancing.Three  steps involved are
-1->EstablishNeighbourRelationship :-For this each and every router should have a RouterID which is set either manually||by the router itself by opting4the highest(UP} status loopback interface IP->if no loopback interface then highest(up) status non-loopBack IP.Router send hello msg containing
-their RID along with some already known neighbuor info and the receiving router checks4AreaID(SHb same) subnet(same),hello&dead interval(how long the router will wait without hearing the hello mssgbefore it assumes that the neighbour is already dead;default is 10sec and this should also b same
-,authentication(match2),SubAreaFlag(same)&unique RID.When all checks fulfilled ReceivR sends a hello msg(itsRID with SendrRout as known neighbour) then R1 enters 2-way state sends another packet to R2 enlisting R2 as a known neighbour which(R2)now gets to the 2-way state as well
-- :Designated Routers : consider These are not connected on point2point connectors. ' . let there be six routers all connected in the same segment such that they all are neighbours.If some particular link goes donw the affected router shall let this to be known to all its neighbours(||2 all other routers)which in turn 
-the other routers will send msgs to their respective neighbours affirming the donwfall of the link.Which gets problmatic&out of control . ' . A DR and BackupDR are ellected based on the highest OSPF priority(default 1) if ties then RouterIDs.When on the same segment routers will become only full neighbours
-of DRs&BDR while the other shall remain in their 2-way state itselfi.e. routers shall ignore updates unless they arrive  from DR.I . E . now when the affected router floods the update it shall be ignored by the rest of the routers but as a response when the DR will share the update every single router would consider it
-2->ExchangeLSDBinfo :-Both the routers enter the Exstart state where depending upon their router id both of them individually decide whether to slave||master.Here the master would control the sequence no. and start the exchange process. Both of'em  share their LSA list to each other often reffered2as DBDescription
-Both of'em switch2their loding state to checks if their indvidual LSDB lacks any info w.r.t to the latter's LSDB.If found any then a LSRequest is sent to which the second router responds by sending a LSUpdate 2 which the NOWupated router responds by sending a LSAck(||acknowledgement).When both the routers 
-are completely updated they switch2their Full stateFrom their Loading state.
-3->Choose the best routes :-OSPF chooses the best route owing to a metric called cost.OSPF cost is the value assigned to a link based on the bandwidth of the interface.Costs of various interfaces are give below :
-Interface 		Default Bandwidth (kbps)	Cost
-Serial		1,544 			64
-Ethernet                   10,000			10
-FastEthernet	100,000 			1(also anything faster than fastEthernet same cost)
-
-While considering routing data between/across different ASs(leverages the IGP at the handle local routing).Most popular and the one which we use on our phones while surfing the internet is BorderGatewayProtocol(Used by many organiz as their EGP)
-Online video streaming is possible only cause this BGP which allows the data packets contianing the video contents;to hop across various routers in order to reach our workStation
- InteriorGatwayProtocol   Vs   Exterior
-
-(i)Carries ISP infrastructure addresses only while EGPs carry customer&internet prefixes
-(ii)ISPs keep IDP small4effiency&scaliability while EGPs are independent of ISP network topology
-(iii)Binds routers in one AS together while EGPs bind AS's together
-(iv)Within an autonomous system while EGP is meant for scaling to a large network&limit the scope of failure.
-(v)automatic neighbour discovery with IGP protcol while EGP specifically configures peers
-(vi)Two widely used IGPs :OSPF&ISIS while for EGP we have BGP
-
-Static R Vs  Dynamic R
-ADV : 
-(i)Easy2implement in small network by creating manual routes while Dynamic is suitable for all network topolgies
-where multiple routes are required.
-(ii)Secure as no route advertisement is  sent while Dynamic is easily scalable irrespective of network size
-(iii)No routing algorithm||update is required   while Dynamic automatically adapts route2 re-route traffic
-DIS ADV :
-(i)suitable to small topologies while Dynamic is initially very complex to implement
-(ii)If link fails static route can't re-route traffic while Dynamic is less secure due to routing updates in network.
+IOT devices can b connected 2 a home network by means of->HomeGateway,registeration server
+Programming languages supported by packet tracer 2 program a thing->Js,python,vishual blocky
+steps2b followed in order 2 view a working graph or chart of environmental changes->choose an environment element&b in view mode
